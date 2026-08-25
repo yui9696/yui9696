@@ -49,4 +49,4 @@ LLM application development, and smart-contract security research on Cantina.
 **Available for remote, outcome-based contracts worldwide** — one PoC, one audit, one proof,
 one feature. I would rather be paid for a deliverable than for hours.
 
-📬 [tabei@ryun.jp](mailto:tabei@ryun.jp) · [yui9696.github.io](https://yui9696.github.io) · [ORCID 0009-0003-0859-5328](https://orcid.org/0009-0003-0859-5328)
+📬 [tabei@ryun.jp](mailto:tabei@ryun.jp) · [yui9696.github.io](https://yui9696.github.io) · [ORCID 0009-0003-0859-5328](https://orcid.org/0009-0003-0859-5328) · [Google Scholar](https://scholar.google.com/citations?user=dx-sHOQAAAAJ)
