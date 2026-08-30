@@ -41,6 +41,20 @@ stays open at every layer.
   schemes), with Miller–Rabin, Tonelli–Shanks and Brent–Pollard rho. Completeness cross-checked
   exhaustively against brute force where it is claimed, and the one honest gap is pinned by a
   test case.
+- [**supersingular-isogeny-lab**](https://github.com/yui9696/supersingular-isogeny-lab) —
+  pure-Python, stdlib-only study toolkit for supersingular curves and isogenies over F<sub>p²</sub>,
+  the geometric object SQIsign lives on: F<sub>p²</sub> arithmetic, the Montgomery x-only ladder,
+  Vélu's formulas, and the (ℓ+1)-regular isogeny graph checked against the mass formula. Ships a
+  `PITFALLS.md` of the classic isogeny-implementation traps, each caught by a test.
+- [**ct-toolbox**](https://github.com/yui9696/ct-toolbox) — `no_std`, zero-dependency Rust
+  constant-time primitives (branchless select, table lookup, GF(2¹²⁷−1) arithmetic, Montgomery
+  ladder), each shipped next to an empirical `timing-guard` test against the leaky anti-pattern
+  it replaces. Honest result: 4 of 6 leaks flag, 2 compile to constant-time code — you measure,
+  you don't assume.
+- [**leakage-lens**](https://github.com/yui9696/leakage-lens) — offline side-channel leakage
+  assessment in NumPy: TVLA first- and higher-order Welch t-tests, dudect-style timing analysis,
+  Student-t thresholds without SciPy, and a simulator whose masked second-order leak is invisible
+  to a first-order test and caught by a second-order one.
 
 **Machine learning**
 
@@ -49,6 +63,17 @@ stays open at every layer.
   gradient verified against central differences (worst relative error 1e-6), causality checked
   bitwise, and a seeded end-to-end demo that reaches 100% held-out exact match on sequence
   reversal in ~40 s on CPU.
+- [**nanograd**](https://github.com/yui9696/nanograd) — a reverse-mode autodiff engine over NumPy
+  that generalises the hand-derived gradients above into a reusable library, then rebuilds the
+  same GPT on top of it. The headline test copies weights across both projects and checks the
+  automatic and hand-derived gradients agree to ~1e-15 (machine precision).
+
+**Developer tooling**
+
+- [**retrace**](https://github.com/yui9696/retrace) — a zero-dependency time-travel tracer for
+  Python: record a run, then query its history — *when did `x` become `None`?*, *what was the
+  stack when this raised?* Uses `sys.monitoring` on 3.12+ and `settrace` on 3.11; building it
+  (and its CI) turned up six real bugs, listed honestly in the README.
 
 **Formal verification**
 
