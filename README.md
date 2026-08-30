@@ -31,6 +31,24 @@ stays open at every layer.
   SQIsign2D / Qlapoti-based IdealToIsogeny), with proved correctness conditions for delayed
   normalisation and a constant-time Rust template. Reproducible sweep harness for Mac, Linux
   and AWS.
+- [**timing-guard**](https://github.com/yui9696/timing-guard) — zero-dependency, `unsafe`-free
+  Rust implementation of the dudect fixed-vs-random leakage test (Welch's t, percentile
+  cropping) for checking your own code's timing behaviour. Statistical tests pinned against
+  hand-computed values; the README documents a real false positive the harness itself had to
+  engineer away.
+- [**cornacchia-kit**](https://github.com/yui9696/cornacchia-kit) — pure-Python, stdlib-only
+  solver for x² + d·y² = m and the 4m variant (the quadratic-form core behind isogeny-based
+  schemes), with Miller–Rabin, Tonelli–Shanks and Brent–Pollard rho. Completeness cross-checked
+  exhaustively against brute force where it is claimed, and the one honest gap is pinned by a
+  test case.
+
+**Machine learning**
+
+- [**attention-from-scratch**](https://github.com/yui9696/attention-from-scratch) — a GPT-style
+  transformer where the forward *and* backward passes are hand-derived in pure NumPy: every
+  gradient verified against central differences (worst relative error 1e-6), causality checked
+  bitwise, and a seeded end-to-end demo that reaches 100% held-out exact match on sequence
+  reversal in ~40 s on CPU.
 
 **Formal verification**
 
