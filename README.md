@@ -26,6 +26,14 @@ Ten manuscripts across the full arithmetic stack, around one falsifiable thesis:
 control-flow constant-time is achievable and verifiable at every layer, yet the operand channel
 stays open at every layer.
 
+- [**sqisign-conformance**](https://github.com/yui9696/sqisign-conformance) — a verification
+  conformance suite: labelled positive **and negative** vectors for all three levels, where
+  upstream ships 100 valid vectors per level and no negative ones. Verification is the only
+  interoperability contract SQIsign has — the spec itself concedes an independent implementation
+  may not reproduce its KATs, because signing uses floating-point lattice reduction. Includes a
+  measured single-bit malleability map (106,240 verifications: every accepted mutation, at every
+  level, lies in the four challenge-matrix entries and nowhere else) and a two-line adapter
+  protocol so any verifier, in any language, can be tested. Ships no cryptography.
 - [**CA-BPN**](https://github.com/yui9696/sqisign-cabpn-artifact) — a cache-aware batch-size
   policy for constant-time normalization in theta-coordinate isogeny pipelines (SQIsign /
   SQIsign2D / Qlapoti-based IdealToIsogeny), with proved correctness conditions for delayed
