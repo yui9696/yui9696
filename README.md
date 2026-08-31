@@ -26,6 +26,14 @@ Ten manuscripts across the full arithmetic stack, around one falsifiable thesis:
 control-flow constant-time is achievable and verifiable at every layer, yet the operand channel
 stays open at every layer.
 
+- [**sqisign-verify-cost**](https://github.com/yui9696/sqisign-verify-cost) — a verification-cost /
+  DoS-surface profiler. A single attacker-controlled signature byte (`two_resp_length`) sets an
+  isogeny-chain loop bound in the reference verifier, so an attacker can make verification cost
+  **1.50× / 1.82× / 2.17×** the honest median at levels 1/3/5 — the amplification rising with the
+  security level, measured over 20 signatures per level and cross-checked to be governed by the
+  public byte, not the key (so it is a resource-cost property, not a side-channel). Quantifies the
+  CPU-exhaustion concern raised on the NIST pqc-forum. Not a break; a measurement of the
+  non-production reference, with the mitigation stated.
 - [**sqisign-conformance**](https://github.com/yui9696/sqisign-conformance) — a verification
   conformance suite: labelled positive **and negative** vectors for all three levels, where
   upstream ships 100 valid vectors per level and no negative ones. Verification is the only
