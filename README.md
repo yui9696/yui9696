@@ -26,6 +26,13 @@ Ten manuscripts across the full arithmetic stack, around one falsifiable thesis:
 control-flow constant-time is achievable and verifiable at every layer, yet the operand channel
 stays open at every layer.
 
+- [**sqisign-verify-fuzz**](https://github.com/yui9696/sqisign-verify-fuzz) — an AddressSanitizer
+  verification-robustness fuzz harness, the fuzz tooling the reference asked for but never got
+  (upstream issue #15). It independently reproduces the open issue #23: because the verifier
+  ignores the signature length and fixed-size-decodes, **every** undersized length (all 148/224/292
+  at the three levels) triggers a heap out-of-bounds read — mapped here per-length to the exact
+  decode line — while 12,000 correct-length malformed inputs are robustly rejected. A reproduction
+  of a known-open issue in a non-production reference, framed as such throughout; not a discovery.
 - [**sqisign-verify-cost**](https://github.com/yui9696/sqisign-verify-cost) — a verification-cost /
   DoS-surface profiler. A single attacker-controlled signature byte (`two_resp_length`) sets an
   isogeny-chain loop bound in the reference verifier, so an attacker can make verification cost
