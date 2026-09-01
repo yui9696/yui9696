@@ -26,6 +26,14 @@ Ten manuscripts across the full arithmetic stack, around one falsifiable thesis:
 control-flow constant-time is achievable and verifiable at every layer, yet the operand channel
 stays open at every layer.
 
+- [**sqisign-verify-trace**](https://github.com/yui9696/sqisign-verify-trace) — golden
+  intermediate-value vectors for SQIsign verification: the auxiliary, challenge, and recovered
+  commitment curve j-invariants the verifier computes, for 300 KAT signatures. Signing is
+  non-deterministic (floating-point lattice reduction), so its KATs can't be reproduced by another
+  implementation — but *verification* is deterministic, so these intermediates are
+  implementation-independent and can serve as interop vectors where the KATs cannot. Ships the
+  73-line instrumentation as a patch (not a copy of the Apache-2.0 reference), a `diff` tool that
+  localises which stage a divergent verifier goes wrong at, and an annotated worked example.
 - [**sqisign-verify-fuzz**](https://github.com/yui9696/sqisign-verify-fuzz) — an AddressSanitizer
   verification-robustness fuzz harness, the fuzz tooling the reference asked for but never got
   (upstream issue #15). It independently reproduces the open issue #23: because the verifier
