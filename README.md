@@ -109,8 +109,13 @@ stays open at every layer.
 **Formal verification**
 
 - [**mathlib4 #42931**](https://github.com/leanprover-community/mathlib4/pull/42931) —
-  simultaneous diagonalisation of two real quadratic forms, submitted to Mathlib itself.
-  No `sorry`; `#print axioms` reports the three standard axioms only.
+  simultaneous diagonalisation of two Hermitian forms, and the generalised eigenvalue problem,
+  submitted to Mathlib itself (245 lines).
+- [**mathlib4 #43229**](https://github.com/leanprover-community/mathlib4/pull/43229) —
+  the probability generating function: a new file built to sit alongside Mathlib's existing
+  moment-generating-function API, with the theorem that the generating function determines
+  the law (233 lines).
+  Both carry no `sorry`; `#print axioms` reports the three standard axioms only.
 - [**lean-portfolio**](https://github.com/yui9696/lean-portfolio) — Lean 4 formalisation work.
 
 **Also**
