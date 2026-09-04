@@ -118,6 +118,10 @@ stays open at every layer.
   Both carry no `sorry`; `#print axioms` reports the three standard axioms only.
 - [**lean-portfolio**](https://github.com/yui9696/lean-portfolio) — Lean 4 formalisation work.
 
+**Smart-contract security — invariant testing**
+
+- [**invariant-suite-demo**](https://github.com/yui9696/invariant-suite-demo) — adversarial Foundry invariant suites for DeFi protocols: derive a protocol's conservation laws, then machine-search multi-actor sequences for a violation. Two clean-room cases, each shown end-to-end — an ERC-4626 share-inflation theft (found and auto-minimized to **3 steps**; the fix holds to **500k calls**) and a staking stale-accrual reward theft (a 0-second staker draining an honest staker's rewards; found, minimized to **4 steps**; the fix holds to **150k calls**). Non-fabricating by construction: a bug is reported only with a running, minimized reproduction, and "sound" only with the fuzzing budget behind it. Illustrative clean-room samples, not audits of live systems.
+
 **Also**
 
 Seven years of solo production backend (Python, TypeScript, Rust, PHP/Laravel, Postgres, AWS),
